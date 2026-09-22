@@ -1,0 +1,6 @@
+{
+  "name": "Gacor",
+  "description": "Gacor — Digital Game Marketplace to discover, buy, and play PC games.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

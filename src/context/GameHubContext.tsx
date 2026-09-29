@@ -131,7 +131,7 @@ export const GameHubProvider: React.FC<{ children: React.ReactNode }> = ({ child
         const defaultGame = INITIAL_GAMES.find(g => g.id === game.id);
         if (defaultGame && (
           game.coverImage?.includes('photo-1552824792') ||
-          ((game.id === 'game-4' || game.id === 'game-8') && !game.coverImage?.startsWith('/assets/'))
+          ((game.id === 'game-3' || game.id === 'game-4' || game.id === 'game-8') && !game.coverImage?.startsWith('/assets/'))
         )) {
           return {
             ...game,
@@ -189,7 +189,7 @@ export const GameHubProvider: React.FC<{ children: React.ReactNode }> = ({ child
         const defaultGame = INITIAL_GAMES.find(g => g.id === item.game.id);
         if (defaultGame && (
           item.game.coverImage?.includes('photo-1552824792') ||
-          ((item.game.id === 'game-4' || item.game.id === 'game-8') && !item.game.coverImage?.startsWith('/assets/'))
+          ((item.game.id === 'game-3' || item.game.id === 'game-4' || item.game.id === 'game-8') && !item.game.coverImage?.startsWith('/assets/'))
         )) {
           return {
             ...item,

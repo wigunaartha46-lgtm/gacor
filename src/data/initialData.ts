@@ -121,12 +121,12 @@ Combat Mechanics:
     platforms: ['Windows', 'macOS', 'Linux'],
     modes: ['Single Player', 'Multiplayer', 'Online PvP'],
     releaseDate: '2025-08-22',
-    coverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
-    bannerImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80',
+    coverImage: '/assets/games/astra_cover.jpg',
+    bannerImage: '/assets/games/astra_banner.jpg',
     screenshots: [
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=80'
+      '/assets/games/astra_banner.jpg',
+      '/assets/games/astra_shot1.jpg',
+      '/assets/games/astra_shot2.jpg'
     ],
     trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     ratingScore: 89,
@@ -482,6 +482,19 @@ export const INITIAL_REVIEWS: Review[] = [
     createdAt: '2026-03-12',
     helpfulCount: 148,
     hoursPlayedAtReview: 18.5
+  },
+  {
+    id: 'rev-6',
+    gameId: 'game-3',
+    userId: 'user-2',
+    userName: 'Kenshiro_Gamer',
+    userAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80',
+    isPositive: true,
+    ratingScore: 5,
+    comment: 'The scale of armada battles is astonishing! Zooming seamlessly from planetary starbase logistics straight into hundreds of battleships firing laser salvos feels incredible.',
+    createdAt: '2026-03-08',
+    helpfulCount: 387,
+    hoursPlayedAtReview: 76.2
   }
 ];
 

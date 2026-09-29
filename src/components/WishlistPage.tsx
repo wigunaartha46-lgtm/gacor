@@ -122,6 +122,10 @@ export const WishlistPage: React.FC = () => {
                   <img
                     src={game.coverImage}
                     alt={game.title}
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                    }}
                     className="w-24 h-28 sm:w-28 sm:h-20 object-cover rounded-lg border border-[#2a475e] shadow group-hover:scale-105 transition-transform"
                   />
                   <div>

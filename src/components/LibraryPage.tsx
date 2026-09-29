@@ -174,6 +174,9 @@ export const LibraryPage: React.FC = () => {
                   <img
                     src={game.bannerImage || game.coverImage}
                     alt={game.title}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_banner.jpg';
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1b2838] via-transparent to-transparent opacity-80" />

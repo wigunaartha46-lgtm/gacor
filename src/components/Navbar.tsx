@@ -236,6 +236,10 @@ export const Navbar: React.FC = () => {
                       <img 
                         src={game.coverImage} 
                         alt={game.title} 
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                        }}
                         className="w-12 h-14 object-cover rounded shadow"
                       />
                       <div className="flex-1 min-w-0">
@@ -349,6 +353,10 @@ export const Navbar: React.FC = () => {
                   <img
                     src={currentUser.avatar}
                     alt={currentUser.username}
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=180&q=80';
+                    }}
                     className="w-7 h-7 rounded-lg object-cover ring-1 ring-[#66c0f4]/50"
                   />
                   <span className="hidden sm:inline-block text-xs font-semibold text-white max-w-[90px] truncate">

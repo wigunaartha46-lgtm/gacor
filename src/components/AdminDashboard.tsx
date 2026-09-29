@@ -259,7 +259,14 @@ export const AdminDashboard: React.FC = () => {
                   {filteredGames.map(game => (
                     <tr key={game.id} className="hover:bg-[#202b3b]/60 transition-colors">
                       <td className="p-4 flex items-center space-x-3">
-                        <img src={game.coverImage} alt={game.title} className="w-10 h-12 object-cover rounded shadow" />
+                        <img 
+                          src={game.coverImage} 
+                          alt={game.title} 
+                          onError={(e) => {
+                            (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                          }}
+                          className="w-10 h-12 object-cover rounded shadow" 
+                        />
                         <div>
                           <p className="font-bold text-white truncate max-w-xs">{game.title}</p>
                           <p className="text-[10px] text-gray-400">{game.genres.slice(0, 2).join(', ')}</p>

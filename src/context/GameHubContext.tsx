@@ -123,12 +123,40 @@ export const GameHubProvider: React.FC<{ children: React.ReactNode }> = ({ child
   // Data collections (with localStorage fallback for demo persistence)
   const [games, setGames] = useState<Game[]>(() => {
     const saved = localStorage.getItem('gamehub_games');
-    return saved ? JSON.parse(saved) : INITIAL_GAMES;
+    if (!saved) return INITIAL_GAMES;
+    try {
+      const parsed: Game[] = JSON.parse(saved);
+      // Auto-heal any broken images or updated default assets
+      return parsed.map(game => {
+        const defaultGame = INITIAL_GAMES.find(g => g.id === game.id);
+        if (defaultGame && (
+          game.coverImage?.includes('photo-1552824792') ||
+          ((game.id === 'game-4' || game.id === 'game-8') && !game.coverImage?.startsWith('/assets/'))
+        )) {
+          return {
+            ...game,
+            coverImage: defaultGame.coverImage,
+            bannerImage: defaultGame.bannerImage,
+            screenshots: defaultGame.screenshots
+          };
+        }
+        return game;
+      });
+    } catch {
+      return INITIAL_GAMES;
+    }
   });
 
   const [reviews, setReviews] = useState<Review[]>(() => {
     const saved = localStorage.getItem('gamehub_reviews');
-    return saved ? JSON.parse(saved) : INITIAL_REVIEWS;
+    if (!saved) return INITIAL_REVIEWS;
+    try {
+      const parsed: Review[] = JSON.parse(saved);
+      const missingDefaults = INITIAL_REVIEWS.filter(ir => !parsed.some(pr => pr.id === ir.id));
+      return missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+    } catch {
+      return INITIAL_REVIEWS;
+    }
   });
 
   const [communityPosts, setCommunityPosts] = useState<CommunityPost[]>(() => {
@@ -154,7 +182,30 @@ export const GameHubProvider: React.FC<{ children: React.ReactNode }> = ({ child
   // Cart
   const [cart, setCart] = useState<CartItem[]>(() => {
     const saved = localStorage.getItem('gamehub_cart');
-    return saved ? JSON.parse(saved) : [];
+    if (!saved) return [];
+    try {
+      const parsed: CartItem[] = JSON.parse(saved);
+      return parsed.map(item => {
+        const defaultGame = INITIAL_GAMES.find(g => g.id === item.game.id);
+        if (defaultGame && (
+          item.game.coverImage?.includes('photo-1552824792') ||
+          ((item.game.id === 'game-4' || item.game.id === 'game-8') && !item.game.coverImage?.startsWith('/assets/'))
+        )) {
+          return {
+            ...item,
+            game: {
+              ...item.game,
+              coverImage: defaultGame.coverImage,
+              bannerImage: defaultGame.bannerImage,
+              screenshots: defaultGame.screenshots
+            }
+          };
+        }
+        return item;
+      });
+    } catch {
+      return [];
+    }
   });
 
   // Playing state

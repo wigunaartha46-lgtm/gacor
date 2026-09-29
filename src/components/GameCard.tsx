@@ -44,6 +44,9 @@ export const GameCard: React.FC<GameCardProps> = ({ game, layout = 'grid' }) => 
           <img 
             src={game.coverImage} 
             alt={game.title} 
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+            }}
             className="w-20 h-24 sm:w-28 sm:h-20 object-cover rounded-lg shadow-md group-hover:scale-105 transition-transform"
           />
           <div className="flex-1 min-w-0">
@@ -128,6 +131,9 @@ export const GameCard: React.FC<GameCardProps> = ({ game, layout = 'grid' }) => 
         <img 
           src={game.coverImage} 
           alt={game.title} 
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+          }}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />

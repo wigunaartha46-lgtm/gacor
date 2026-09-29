@@ -97,6 +97,9 @@ export const CartPage: React.FC = () => {
                     <img
                       src={game.coverImage}
                       alt={game.title}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                      }}
                       className="w-20 h-24 sm:w-24 sm:h-16 object-cover rounded-lg border border-[#2a475e] shadow group-hover:scale-105 transition-transform"
                     />
                     <div>

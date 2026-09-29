@@ -134,7 +134,11 @@ export const CommunityPage: React.FC = () => {
                 <img
                   src={post.authorAvatar}
                   alt={post.authorName}
+                  referrerPolicy="no-referrer"
                   className="w-10 h-10 rounded-xl object-cover ring-1 ring-[#66c0f4]/40"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80';
+                  }}
                 />
                 <div>
                   <div className="flex items-center space-x-2">
@@ -168,7 +172,15 @@ export const CommunityPage: React.FC = () => {
             {/* Attached Image if any */}
             {post.imageUrl && (
               <div className="rounded-xl overflow-hidden border border-[#2a475e] max-h-96 aspect-video bg-[#171a21]">
-                <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover" />
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/assets/games/apex_strike_banner.jpg';
+                  }}
+                />
               </div>
             )}
 

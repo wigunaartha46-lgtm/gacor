@@ -141,6 +141,10 @@ export const GameDetail: React.FC = () => {
             <img 
               src={allMedia[activeMediaIndex] || game.coverImage} 
               alt={game.title} 
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_banner.jpg';
+              }}
               className="w-full h-full object-cover transition-all duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
@@ -172,7 +176,15 @@ export const GameDetail: React.FC = () => {
                     : 'border-[#2a475e] opacity-60 hover:opacity-100'
                 }`}
               >
-                <img src={mediaUrl} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
+                <img 
+                  src={mediaUrl} 
+                  alt={`Thumbnail ${idx}`} 
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_shot1.jpg';
+                  }}
+                  className="w-full h-full object-cover" 
+                />
               </button>
             ))}
           </div>
@@ -298,6 +310,10 @@ export const GameDetail: React.FC = () => {
             <img 
               src={game.coverImage} 
               alt={game.title} 
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+              }}
               className="w-full aspect-[16/10] object-cover rounded-xl shadow-lg border border-[#2a475e]"
             />
 
@@ -494,6 +510,10 @@ export const GameDetail: React.FC = () => {
                     <img 
                       src={rev.userAvatar} 
                       alt={rev.userName} 
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80';
+                      }}
                       className="w-9 h-9 rounded-lg object-cover ring-1 ring-[#66c0f4]/40"
                     />
                     <div>

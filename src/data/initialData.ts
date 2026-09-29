@@ -167,11 +167,12 @@ Combat Mechanics:
     platforms: ['Windows'],
     modes: ['Multiplayer', 'Online PvP', 'Co-op'],
     releaseDate: '2025-03-12',
-    coverImage: 'https://images.unsplash.com/photo-1552824792-c07a3014a51e?auto=format&fit=crop&w=800&q=80',
-    bannerImage: 'https://images.unsplash.com/photo-1552824792-c07a3014a51e?auto=format&fit=crop&w=1600&q=80',
+    coverImage: '/assets/games/apex_strike_cover.jpg',
+    bannerImage: '/assets/games/apex_strike_banner.jpg',
     screenshots: [
-      'https://images.unsplash.com/photo-1552824792-c07a3014a51e?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1200&q=80'
+      '/assets/games/apex_strike_banner.jpg',
+      '/assets/games/apex_strike_shot1.jpg',
+      '/assets/games/apex_strike_shot2.jpg'
     ],
     trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     ratingScore: 91,
@@ -340,11 +341,12 @@ Combat Mechanics:
     platforms: ['Windows', 'macOS', 'Linux'],
     modes: ['Single Player'],
     releaseDate: '2026-02-18',
-    coverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
-    bannerImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80',
+    coverImage: '/assets/games/chronos_cover.jpg',
+    bannerImage: '/assets/games/chronos_banner.jpg',
     screenshots: [
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80'
+      '/assets/games/chronos_banner.jpg',
+      '/assets/games/chronos_shot1.jpg',
+      '/assets/games/chronos_shot2.jpg'
     ],
     trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     ratingScore: 96,
@@ -454,6 +456,32 @@ export const INITIAL_REVIEWS: Review[] = [
     createdAt: '2026-02-15',
     helpfulCount: 512,
     hoursPlayedAtReview: 94.6
+  },
+  {
+    id: 'rev-4',
+    gameId: 'game-8',
+    userId: 'user-2',
+    userName: 'Kenshiro_Gamer',
+    userAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80',
+    isPositive: true,
+    ratingScore: 5,
+    comment: 'The time manipulation and gravity reversing mechanics are mind-blowing! Reminds me of Portal 2 and The Witness, but with quantum timeline paradoxes that make you feel like a genius when solved.',
+    createdAt: '2026-03-05',
+    helpfulCount: 215,
+    hoursPlayedAtReview: 22.8
+  },
+  {
+    id: 'rev-5',
+    gameId: 'game-8',
+    userId: 'user-3',
+    userName: 'Sari_Valkyrie',
+    userAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80',
+    isPositive: true,
+    ratingScore: 5,
+    comment: 'Pure puzzle perfection. The temporal rewind glove feels so responsive, and the atmospheric quantum puzzle chambers are breathtaking. An absolute must-play indie masterpiece!',
+    createdAt: '2026-03-12',
+    helpfulCount: 148,
+    hoursPlayedAtReview: 18.5
   }
 ];
 

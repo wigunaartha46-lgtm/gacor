@@ -117,7 +117,14 @@ export const CheckoutPage: React.FC = () => {
               <div className="space-y-2">
                 {completedOrder.items.map(item => (
                   <div key={item.gameId} className="flex items-center space-x-3 bg-[#1b2838] p-2 rounded-lg border border-[#2a475e]/60">
-                    <img src={item.coverImage} alt={item.title} className="w-10 h-12 object-cover rounded shadow" />
+                    <img 
+                      src={item.coverImage} 
+                      alt={item.title} 
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                      }}
+                      className="w-10 h-12 object-cover rounded shadow" 
+                    />
                     <div className="flex-1 min-w-0">
                       <p className="font-bold text-white truncate">{item.title}</p>
                       <p className="text-[10px] text-emerald-400 font-semibold">License Ready • Lifetime Access</p>
@@ -414,7 +421,14 @@ export const CheckoutPage: React.FC = () => {
               {cart.map(item => (
                 <div key={item.id} className="py-2.5 flex items-center justify-between gap-3 text-xs">
                   <div className="flex items-center space-x-2 min-w-0">
-                    <img src={item.game.coverImage} alt={item.game.title} className="w-8 h-10 object-cover rounded shadow" />
+                    <img 
+                      src={item.game.coverImage} 
+                      alt={item.game.title} 
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                      }}
+                      className="w-8 h-10 object-cover rounded shadow" 
+                    />
                     <span className="font-semibold text-white truncate">{item.game.title}</span>
                   </div>
                   <span className="font-bold text-white shrink-0">

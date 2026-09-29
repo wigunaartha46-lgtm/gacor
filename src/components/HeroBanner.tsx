@@ -206,6 +206,9 @@ export const HeroBanner: React.FC = () => {
             <img 
               src={current.bannerImage || current.coverImage} 
               alt={current.title} 
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_banner.jpg';
+              }}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
@@ -222,7 +225,14 @@ export const HeroBanner: React.FC = () => {
             <div className="grid grid-cols-3 gap-2 mt-3">
               {current.screenshots.slice(0, 3).map((screen, idx) => (
                 <div key={idx} className="aspect-video rounded-lg overflow-hidden border border-[#2a475e]/60">
-                  <img src={screen} alt="Preview" className="w-full h-full object-cover hover:opacity-90" />
+                  <img 
+                    src={screen} 
+                    alt="Preview" 
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_shot1.jpg';
+                    }}
+                    className="w-full h-full object-cover hover:opacity-90" 
+                  />
                 </div>
               ))}
             </div>
@@ -262,7 +272,14 @@ export const HeroBanner: React.FC = () => {
                       : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={g.coverImage} alt={g.title} className="w-full h-full object-cover" />
+                  <img 
+                    src={g.coverImage} 
+                    alt={g.title} 
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                    }}
+                    className="w-full h-full object-cover" 
+                  />
                 </button>
               ))}
             </div>

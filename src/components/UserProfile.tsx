@@ -220,7 +220,14 @@ export const UserProfile: React.FC = () => {
                   onClick={() => viewGameDetail(game.id)}
                   className="flex items-center space-x-3 bg-[#171a21] p-3 rounded-xl border border-[#2a475e]/60 hover:border-[#66c0f4] cursor-pointer transition-all"
                 >
-                  <img src={game.coverImage} alt={game.title} className="w-14 h-16 object-cover rounded-lg shadow" />
+                  <img 
+                    src={game.coverImage} 
+                    alt={game.title} 
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                    }}
+                    className="w-14 h-16 object-cover rounded-lg shadow" 
+                  />
                   <div className="min-w-0">
                     <p className="font-bold text-white text-sm truncate">{game.title}</p>
                     <p className="text-xs text-gray-400 mt-0.5">
@@ -244,7 +251,14 @@ export const UserProfile: React.FC = () => {
               onClick={() => viewGameDetail(game.id)}
               className="bg-[#1b2838] border border-[#2a475e] rounded-xl p-4 flex items-center space-x-3 hover:border-[#66c0f4] cursor-pointer transition-all"
             >
-              <img src={game.coverImage} alt={game.title} className="w-16 h-20 object-cover rounded-lg shadow" />
+              <img 
+                src={game.coverImage} 
+                alt={game.title} 
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/assets/games/apex_strike_cover.jpg';
+                }}
+                className="w-16 h-20 object-cover rounded-lg shadow" 
+              />
               <div className="min-w-0 flex-1">
                 <h3 className="font-bold text-white text-sm truncate">{game.title}</h3>
                 <p className="text-xs text-gray-400 mt-0.5">{game.genres[0]}</p>
